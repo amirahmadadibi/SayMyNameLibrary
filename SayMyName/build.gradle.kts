@@ -1,17 +1,43 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+//    id("maven-publish")
+
 }
 
 android {
     namespace = "amirahmadadibi.projects.saymyname"
     compileSdk = 34
 
+
+//    publishing {
+////        singleVariant("release") {
+////            withSourcesJar()
+////        }
+//
+//        publications {
+//            register<MavenPublication>("release") {
+//                groupId = "com.my-company"
+//                artifactId = "my-library"
+//                version = "1.0"
+//
+//                afterEvaluate {
+//                    from(components["release"])
+//                }
+//            }
+//        }
+//
+//    }
+
     defaultConfig {
         minSdk = 24
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        aarMetadata {
+            minCompileSdk = 29
+        }
     }
 
     buildTypes {
